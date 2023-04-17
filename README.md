@@ -7,3 +7,6 @@
 - pygame
 - PIL
 - skimage
+
+# Testing images
+All images are downloaded from the web, used for testing only.
