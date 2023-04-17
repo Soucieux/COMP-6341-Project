@@ -134,7 +134,7 @@ def draw(gray_image, brightness_sum, image_size, screen):
                 # Draw the line
                 pygame.draw.line(screen, (0, 0, 0), (x, y), (x, y + current_y))
 
-            # Drawing left diagonal line
+            # Drawing right diagonal line
             length_x = 0
             length_y = 0
             # Line starts from this pixel should not exist already
@@ -155,7 +155,7 @@ def draw(gray_image, brightness_sum, image_size, screen):
                 # Draw the line
                 pygame.draw.line(screen, (0, 0, 0), (x, y), (x - length_x, y + length_y))
 
-            # Drawing right diagonal line
+            # Drawing left diagonal line
             length_x = 0
             length_y = 0
             # Line starts from this pixel should not exist already
