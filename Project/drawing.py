@@ -101,10 +101,6 @@ def draw(gray_image, average_brightness, image_size, screen):
                     # Drawing should stop when it reaches the edge
                     if canny_edge[col, row] != 255:
                         break
-                    # Make sure the line does not across the edge
-                    if gray_image.getpixel((col, row)) > 200:
-                        break
-
                     brightness_sum_x += gray_image.getpixel((col, row))
                     current_x += 1
                 # Draw the line
@@ -121,10 +117,6 @@ def draw(gray_image, average_brightness, image_size, screen):
                     # Drawing should stop when it reaches the edge
                     if canny_edge[col, row] != 255:
                         break
-                    # Make sure the line does not across the edge
-                    if gray_image.getpixel((col, row)) > 150:
-                        break
-
                     brightness_sum_y += gray_image.getpixel((col, row))
                     current_y += 1
                 # Draw the line
@@ -140,8 +132,6 @@ def draw(gray_image, average_brightness, image_size, screen):
                     row, col = divmod(index + (length_y * gray_image.width - length_x), gray_image.width)
                     # Drawing should stop when it reaches the edge
                     if canny_edge[col, row] != 255:
-                        break
-                    if gray_image.getpixel((col, row)) > 230:
                         break
                     # Increment length on both directions based on spacing, as this is a diagonal line
                     if length_x < spacing_y:
@@ -161,8 +151,6 @@ def draw(gray_image, average_brightness, image_size, screen):
                     row, col = divmod(index + (length_y * gray_image.width + length_x), gray_image.width)
                     # Drawing should stop when it reaches the edge
                     if canny_edge[col, row] != 255:
-                        break
-                    if gray_image.getpixel((col, row)) > 230:
                         break
                     # Increment length on both directions based on spacing, as this is a diagonal line
                     if length_x < spacing_y:
